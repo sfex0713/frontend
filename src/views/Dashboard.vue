@@ -150,7 +150,7 @@ const loadDashboardData = async () => {
     if (userStore.userInfo.user_type === 'factory') {
       try {
         const profileRes = await axios.get(
-          'http://localhost:3000/api/factory/profile',
+          '${import.meta.env.VITE_API_BASE_URL}/factory/profile',
           {
             headers: {
               'Authorization': `Bearer ${userStore.token}`
@@ -168,7 +168,7 @@ const loadDashboardData = async () => {
     // 获取采购需求数量
     try {
       const requestsRes = await axios.get(
-        'http://localhost:3000/api/purchase/requests',
+        '${import.meta.env.VITE_API_BASE_URL}/purchase/requests',
         {
           headers: {
             'Authorization': `Bearer ${userStore.token}`
@@ -183,7 +183,7 @@ const loadDashboardData = async () => {
     // 获取询盘券余额
     try {
       const walletRes = await axios.get(
-        'http://localhost:3000/api/coupon/wallet',
+        '${import.meta.env.VITE_API_BASE_URL}/coupon/wallet',
         {
           headers: {
             'Authorization': `Bearer ${userStore.token}`

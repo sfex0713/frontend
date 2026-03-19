@@ -185,7 +185,7 @@ const handleRegister = async () => {
   isLoading.value = true
   
   try {
-    const res = await axios.post('http://localhost:3000/api/auth/register', {
+    const res = await axios.post('${import.meta.env.VITE_API_BASE_URL}/auth/register', {
       username: formData.value.username,
       password: formData.value.password,
       email: formData.value.email,

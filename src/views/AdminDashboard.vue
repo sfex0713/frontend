@@ -220,7 +220,7 @@ onMounted(() => {
 
 const loadStats = async () => {
   try {
-    const res = await axios.get('http://localhost:3000/api/admin/dashboard', {
+    const res = await axios.get('${import.meta.env.VITE_API_BASE_URL}/admin/dashboard', {
       headers: { 'Authorization': `Bearer ${userStore.token}` }
     })
     stats.value = res.data.data
@@ -234,7 +234,7 @@ const loadUsers = async () => {
   try {
     console.log('Token:', userStore.token)
     
-    const res = await axios.get('http://localhost:3000/api/admin/users', {
+    const res = await axios.get('${import.meta.env.VITE_API_BASE_URL}/admin/users', {
       headers: { 'Authorization': `Bearer ${userStore.token}` }
     })
     
@@ -250,7 +250,7 @@ const loadUsers = async () => {
 
 const loadReviews = async () => {
   try {
-    const res = await axios.get('http://localhost:3000/api/admin/reviews/pending', {
+    const res = await axios.get('${import.meta.env.VITE_API_BASE_URL}/admin/reviews/pending', {
       headers: { 'Authorization': `Bearer ${userStore.token}` }
     })
     reviews.value = res.data.data
@@ -262,7 +262,7 @@ const loadReviews = async () => {
 const loadLogs = async () => {
   logsLoading.value = true
   try {
-    const res = await axios.get('http://localhost:3000/api/admin/logs', {
+    const res = await axios.get('${import.meta.env.VITE_API_BASE_URL}/admin/logs', {
       headers: { 'Authorization': `Bearer ${userStore.token}` }
     })
     logs.value = res.data.data || []
@@ -276,7 +276,7 @@ const loadLogs = async () => {
 const toggleUserStatus = async (user) => {
   try {
     await axios.put(
-      `http://localhost:3000/api/admin/users/${user.id}/status`,
+      `${import.meta.env.VITE_API_BASE_URL}/admin/users/${user.id}/status`,
       { status: user.status === 'disabled' ? 'active' : 'disabled' },
       { headers: { 'Authorization': `Bearer ${userStore.token}` } }
     )
@@ -291,7 +291,7 @@ const reviewContent = async (contentType, contentId, status) => {
   const comment = prompt('请输入审核意见（可选）:')
   try {
     await axios.post(
-      `http://localhost:3000/api/admin/reviews/${contentType}/${contentId}`,
+      `${import.meta.env.VITE_API_BASE_URL}/admin/reviews/${contentType}/${contentId}`,
       { status, comment },
       { headers: { 'Authorization': `Bearer ${userStore.token}` } }
     )

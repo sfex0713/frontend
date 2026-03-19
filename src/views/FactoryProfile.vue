@@ -128,7 +128,7 @@ const submitProfile = async () => {
   
   try {
     const res = await axios.post(
-      'http://localhost:3000/api/factory/profile',
+      '${import.meta.env.VITE_API_BASE_URL}/factory/profile',
       formData.value,
       {
         headers: {

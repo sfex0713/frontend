@@ -166,7 +166,7 @@ const loadMatches = async () => {
   try {
     if (viewMode.value === 'factories') {
       const res = await axios.get(
-        'http://localhost:3000/api/purchase/matches/factories',
+        '${import.meta.env.VITE_API_BASE_URL}/purchase/matches/factories',
         {
           headers: {
             'Authorization': `Bearer ${userStore.token}`
@@ -176,7 +176,7 @@ const loadMatches = async () => {
       factories.value = res.data.data || []
     } else {
       const res = await axios.get(
-        'http://localhost:3000/api/purchase/matches/requests',
+        '${import.meta.env.VITE_API_BASE_URL}/purchase/matches/requests',
         {
           headers: {
             'Authorization': `Bearer ${userStore.token}`
@@ -200,7 +200,7 @@ const unlockContact = async (matchId) => {
   
   try {
     const res = await axios.post(
-      'http://localhost:3000/api/coupon/unlock',
+      '${import.meta.env.VITE_API_BASE_URL}/coupon/unlock',
       { matchId: matchId },
       {
         headers: {

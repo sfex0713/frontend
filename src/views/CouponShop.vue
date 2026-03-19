@@ -140,7 +140,7 @@ onMounted(() => {
 const loadWallet = async () => {
   try {
     const res = await axios.get(
-      'http://localhost:3000/api/coupon/wallet',
+      '${import.meta.env.VITE_API_BASE_URL}/coupon/wallet',
       {
         headers: {
           'Authorization': `Bearer ${userStore.token}`
@@ -156,7 +156,7 @@ const loadWallet = async () => {
 const loadOrders = async () => {
   try {
     const res = await axios.get(
-      'http://localhost:3000/api/coupon/orders',
+      '${import.meta.env.VITE_API_BASE_URL}/coupon/orders',
       {
         headers: {
           'Authorization': `Bearer ${userStore.token}`
@@ -178,7 +178,7 @@ const handlePurchase = async () => {
   
   try {
     const res = await axios.post(
-      'http://localhost:3000/api/payment/create',
+      '${import.meta.env.VITE_API_BASE_URL}/payment/create',
       { 
         quantity: selectedQuantity.value,
         amount: totalPrice.value 
