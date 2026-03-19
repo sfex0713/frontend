@@ -6,9 +6,6 @@ export default defineConfig({
   server: {
     port: 5173,
     host: '0.0.0.0'
-  },
-  define: {
-    // 确保环境变量在构建时被正确注入
-    'import.meta.env.VITE_API_BASE_URL': JSON.stringify(process.env.VITE_API_BASE_URL || 'http://p8a653e7.natappfree.cc/api')
   }
+  // 不需要 define 配置，Vite 会自动处理 import.meta.env
 })

@@ -10,7 +10,7 @@ const pinia = createPinia()
 // 获取 API 基础 URL
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://p8a653e7.natappfree.cc/api'
 
-console.log('API 基础 URL:', API_BASE_URL)
+console.log('🔗 API 基础 URL:', API_BASE_URL)
 
 // 全局配置 axios
 axios.defaults.baseURL = API_BASE_URL
