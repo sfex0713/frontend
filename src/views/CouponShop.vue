@@ -6,7 +6,7 @@
     </div>
 
     <div class="coupon-content">
-      <!-- 钱包余额卡片 -->
+     
       <div class="wallet-card">
         <div class="balance-info">
           <span class="label">当前余额</span>
