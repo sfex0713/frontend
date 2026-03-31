@@ -7,5 +7,5 @@ export default defineConfig({
     port: 5173,
     host: '0.0.0.0'
   }
-  // 不需要 define 配置，Vite 会自动处理 import.meta.env
+  // 删除 define 部分！Vite 会自动处理环境变量
 })
