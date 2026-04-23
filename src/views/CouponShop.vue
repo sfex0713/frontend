@@ -140,7 +140,7 @@ onMounted(() => {
 const loadWallet = async () => {
   try {
     const res = await axios.get(
-      `${import.meta.env.VITE_API_BASE_URL}/coupon/wallet`,  // 使用反引号
+      '${import.meta.env.VITE_API_BASE_URL}/coupon/wallet',
       {
         headers: {
           'Authorization': `Bearer ${userStore.token}`
@@ -156,7 +156,7 @@ const loadWallet = async () => {
 const loadOrders = async () => {
   try {
     const res = await axios.get(
-      `${import.meta.env.VITE_API_BASE_URL}/coupon/orders`,  // 使用反引号
+      '${import.meta.env.VITE_API_BASE_URL}/coupon/orders',
       {
         headers: {
           'Authorization': `Bearer ${userStore.token}`
